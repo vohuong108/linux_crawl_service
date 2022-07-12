@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const uri = "mongodb://localhost:27017/twitter_db"
+const uri = "mongodb://localhost:27017/twitter_db_20_22"
 
 
 const connectDB = async () => {

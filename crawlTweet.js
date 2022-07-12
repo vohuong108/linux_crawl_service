@@ -1,26 +1,30 @@
 const Tweet = require('./models/Tweet');
 const {searchTweet} = require('./helper');
 
-const API_KEY = "AAAAAAAAAAAAAAAAAAAAABopbAEAAAAABjKNpF1Z6Q%2FY60kB7mGf2LkGulM%3DBsIva0OchIY5Q3Ip9VuBbT6B3Otbs9SkswbKWZ90S3xkpVrtDW";
+//const API_KEY = "AAAAAAAAAAAAAAAAAAAAABopbAEAAAAABjKNpF1Z6Q%2FY60kB7mGf2LkGulM%3DBsIva0OchIY5Q3Ip9VuBbT6B3Otbs9SkswbKWZ90S3xkpVrtDW";
 // const API_KEY = "AAAAAAAAAAAAAAAAAAAAAORkbgEAAAAAAcQTpVTL1JW5kQsqXVLrghj0q84%3DhGKngmKtw03vI5expf1O15qibaESFefHHGah34mRngrVTzMwIm"
+// const API_KEY = "AAAAAAAAAAAAAAAAAAAAAC5iegEAAAAApMUw1cVIf8Y2JLwdy3y%2BIXknb50%3D0mgfp6m6EvtB7oWplJhoMxpP1UnvODEeCWQn1fCiws1zK23mOI";
+const API_KEY = "AAAAAAAAAAAAAAAAAAAAAE76egEAAAAAGFL2uPUnKB8kyQBF7Yq4UtJVNRA%3DhwJRjNMW4htwGJIS2bz0IQ7DIxdVd4EtzVRwATMelWsf63Z1jd";
+
 const QUERY = "robotic%20OR%20%22machine%20learning%22%20OR%20%22artificial%20intelligence%22%20OR%20%22ai%22%20lang%3Aen";
 
 
 const handleSearchTweet = async () => {
-    let NEXT_TOKEN = "";
-    let INDEX_DOCUMENT = 0;
-    // let NEXT_TOKEN = "b26v89c19zqg8o3fpds84irxituj7zurauoxn4e4xqoot";
-    // let INDEX_DOCUMENT = 19380580;
+    // let NEXT_TOKEN = "";
+    // let INDEX_DOCUMENT = 0;
 
-    let tokenInfo = await getNextToken();
+    let NEXT_TOKEN = "b26v89c19zqg8o3foshvh20xzaz7e5bkbh0u00k9dl3lp";
+    let INDEX_DOCUMENT = 42023132;
 
-    if(tokenInfo !== "FAILED GET NEXTTOKEN") {
-        console.log("GET NEXTTOKEN SUCCESSFULL: ", tokenInfo);
+    // let tokenInfo = await getNextToken();
 
-        NEXT_TOKEN = tokenInfo.next_token;
-        INDEX_DOCUMENT = tokenInfo.currentIndex + 1;
+    // if(tokenInfo !== "FAILED GET NEXTTOKEN") {
+    //     console.log("GET NEXTTOKEN SUCCESSFULL: ", tokenInfo);
 
-    } else return "FAILED IN SEARCH TWEET";
+    //     NEXT_TOKEN = tokenInfo.next_token;
+    //     INDEX_DOCUMENT = tokenInfo.currentIndex + 1;
+
+    // } else return "FAILED IN SEARCH TWEET";
 
     while (true) {
         let searchResponse = await searchTweet(QUERY, NEXT_TOKEN, API_KEY);
