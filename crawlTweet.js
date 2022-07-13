@@ -13,8 +13,8 @@ const handleSearchTweet = async () => {
     // let NEXT_TOKEN = "";
     // let INDEX_DOCUMENT = 0;
 
-    let NEXT_TOKEN = "b26v89c19zqg8o3foshvh20xzaz7e5bkbh0u00k9dl3lp";
-    let INDEX_DOCUMENT = 42023132;
+    let NEXT_TOKEN = "b26v89c19zqg8o3fosevpn02bo8fjc9e4e55zfj6tv62l";
+    let INDEX_DOCUMENT = 43790167;
 
     // let tokenInfo = await getNextToken();
 
